@@ -6,6 +6,8 @@ TagManager:
   tags:
   - PipeTop
   - NoCollision
+  - Interactable
+  - Enemy
   layers:
   - Default
   - TransparentFX

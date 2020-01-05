@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Abmoog
   m_EditorClassIdentifier: 
   name: Abmoog
-  prefab: {fileID: 3698226371082819661, guid: 52d44afadec5f574b974d869f2af15f5, type: 3}
   score: 100
+  deleted: 1

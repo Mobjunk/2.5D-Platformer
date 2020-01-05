@@ -7,4 +7,5 @@ public class Enemy : ScriptableObject
 {
     public string name;
     public int score;
+    public bool deleted;
 }

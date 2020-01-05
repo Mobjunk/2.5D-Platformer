@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 8608858431590433751}
   m_Layer: 8
   m_Name: Question mark
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -141,3 +141,5 @@ MonoBehaviour:
   reward: {fileID: 11400000, guid: dcac58d7ed3a2664382fa469d6a33b6c, type: 2}
   empty: {fileID: 2100000, guid: bd6f736adaf15ff4e80924c8ae7a456a, type: 2}
   spawnPoint: {fileID: 2873736448211427271}
+  powerup: {fileID: 0}
+  sendUpwards: 0

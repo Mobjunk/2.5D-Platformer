@@ -5,9 +5,15 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerJumping : MonoBehaviour
 {
+    /// <summary>
+    /// The jump force of the player
+    /// </summary>
     [SerializeField] float jumpForce = 10;
 
-    private Rigidbody rigidbody;
+    /// <summary>
+    /// The rigidbody attached to the player
+    /// </summary>
+    Rigidbody rigidbody;
 
     void Start()
     {
@@ -26,11 +32,14 @@ public class PlayerJumping : MonoBehaviour
         bool pressingJumping = Input.GetKeyDown(KeyCode.Space);
         //Checks if the player is grounded or not and pressed the space button
         if (GroundDetection.instance.isGrounded && pressingJumping)
-        {
-            //Handles adding force to the player in an upwards direction
-            rigidbody.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
+            Jump(jumpForce);
+    }
 
-            SoundPlayer.instance.PlaySound(Sounds.JUMPING);
-        }
+    public void Jump(float force)
+    {
+        //Handles adding force to the player in an upwards direction
+        rigidbody.AddForce(new Vector3(0, force, 0), ForceMode.Impulse);
+
+        SoundPlayer.instance.PlaySound(Sounds.JUMPING);
     }
 }
