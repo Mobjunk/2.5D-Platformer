@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (!GameManager.instance.gameStarted) return;
         Move();
     }
 

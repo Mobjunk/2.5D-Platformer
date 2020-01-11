@@ -44,6 +44,12 @@ public class EnemyController : ObjectMovement
         this.score = enemy.score;
     }
 
+    public void Reset()
+    {
+        stompedHead = false;
+        kickedEnemy = false;
+    }
+    
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag.Equals("Player"))
@@ -63,7 +69,7 @@ public class EnemyController : ObjectMovement
                         gameManager.IncreaseScore(score);
 
                         //Checks if the enemy has to been deleted from the scene
-                        if (enemy.deleted) Destroy(gameObject);
+                        if (enemy.deleted) gameObject.SetActive(false); //Destroy(gameObject);
                         //Pauses the movement of the enemy
                         else pauseMovement = true;
                     }

@@ -26,7 +26,7 @@ public class PickupMushroom : ObjectMovement
 
             Destroy(gameObject);
         }
-        else if (!collision.gameObject.tag.Equals("NoCollision"))
+        else if (!collision.gameObject.tag.Equals("NoCollision") && !collision.gameObject.tag.Equals("Interactable"))
             direction = direction == 1 ? -1 : 1;
     }
 }

@@ -97,4 +97,12 @@ public class ApookApoort : MonoBehaviour
             }
         }
     }
+
+    public void Reset()
+    {
+        hasBeenStomped = false;
+        hasBeenKicked = false;
+        shellTimer = 0;
+        enemyController.movementSpeed = 3.5f;
+    }
 }

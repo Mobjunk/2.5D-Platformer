@@ -26,7 +26,8 @@ public class Brick : BlockHandler
             rb.AddForce(Vector3.up * Random.Range(50, 150));
         }
 
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        gameObject.SetActive(false);
 
         gameManager.IncreaseScore(50);
 

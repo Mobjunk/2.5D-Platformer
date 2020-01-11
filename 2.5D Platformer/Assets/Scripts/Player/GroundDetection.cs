@@ -9,7 +9,7 @@ public class GroundDetection : MonoBehaviour
     /// <summary>
     /// The boolean to check if the player is on the ground
     /// </summary>
-    public bool isGrounded;
+    [HideInInspector] public bool isGrounded;
     [SerializeField] float distanceToFloor = 0.5f;
 
     void Start()

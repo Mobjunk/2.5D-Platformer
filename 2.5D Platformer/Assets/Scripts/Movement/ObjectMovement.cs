@@ -34,6 +34,8 @@ public abstract class ObjectMovement : MonoBehaviour
 
     public virtual void Update()
     {
+        if (!GameManager.instance.gameStarted) return;
+        
         //Checks if the 'object' is allowed to move
         if (!pauseMovement)
             rigidbody.velocity = new Vector2(direction * movementSpeed, rigidbody.velocity.y);

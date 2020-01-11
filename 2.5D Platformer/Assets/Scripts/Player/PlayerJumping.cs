@@ -22,6 +22,7 @@ public class PlayerJumping : MonoBehaviour
 
     void Update()
     {
+        if (!GameManager.instance.gameStarted) return;
         HandleJumping();
     }
 

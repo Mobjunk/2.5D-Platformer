@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class QuestionMark : BlockHandler
 {
-    [SerializeField] Material empty;
+    [SerializeField] Material empty, regular;
     [SerializeField] Transform spawnPoint;
     [SerializeField] GameObject powerup;
     [SerializeField] bool sendUpwards = false;
@@ -25,8 +25,8 @@ public class QuestionMark : BlockHandler
             sendUpwards = false;
             if(!reward.powerup)
             {
-                Destroy(powerup);
-                powerup = null;
+                //Destroy(powerup);
+                //powerup = null;
             }
         }
     }
@@ -47,6 +47,11 @@ public class QuestionMark : BlockHandler
         HandleMovement();
 
         StartCoroutine(HandleSpawn());
+    }
+
+    public void Reset()
+    {
+        meshRenderer.material = regular;
     }
 
     IEnumerator HandleSpawn()
