@@ -8,6 +8,8 @@ TagManager:
   - NoCollision
   - Interactable
   - Enemy
+  - Teleport
+  - Walk
   layers:
   - Default
   - TransparentFX
@@ -21,7 +23,7 @@ TagManager:
   - Player
   - Powerup
   - Enemy
-  - 
+  - Death
   - 
   - 
   - 

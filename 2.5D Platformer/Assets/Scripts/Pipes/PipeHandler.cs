@@ -7,8 +7,8 @@ public class PipeHandler : MonoBehaviour
     public static PipeHandler instance;
 
     [SerializeField] Transform[] positions;
-    [SerializeField] bool canUseThePipe;
-    public bool usingThePipe;
+    [HideInInspector] public bool canUseThePipe;
+    [HideInInspector] public bool usingThePipe;
     [SerializeField] KeyCode keyUsed;
 
     void Start()

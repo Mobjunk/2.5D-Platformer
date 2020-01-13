@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-        if (PipeHandler.instance != null && PipeHandler.instance.usingThePipe) return;
+        if (PipeHandler.instance != null && PipeHandler.instance.usingThePipe || TeleportPipe.instance != null && TeleportPipe.instance.usingThePipe) return;
 
         rigidbody.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * movementSpeed, rigidbody.velocity.y);
     }

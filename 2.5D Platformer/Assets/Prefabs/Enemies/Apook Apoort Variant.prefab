@@ -1,0 +1,128 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &875923905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9124660585959402385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2dedd61ad9da7148a6b2ab6aec14017, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  regularMaterial: {fileID: 2100000, guid: db9891d0637396341a17b21a1d07b893, type: 2}
+  stompedMaterial: {fileID: 2100000, guid: 8f61287daec4fe94395585754bbb3829, type: 2}
+--- !u!1001 &5617100612190712796
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3698226371082819661, guid: 52d44afadec5f574b974d869f2af15f5,
+        type: 3}
+      propertyPath: m_Name
+      value: Apook Apoort Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 3698226371082819661, guid: 52d44afadec5f574b974d869f2af15f5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3698226371082819661, guid: 52d44afadec5f574b974d869f2af15f5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3698226371082819661, guid: 52d44afadec5f574b974d869f2af15f5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3698226371082819697, guid: 52d44afadec5f574b974d869f2af15f5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -31.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 3698226371082819697, guid: 52d44afadec5f574b974d869f2af15f5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.875
+      objectReference: {fileID: 0}
+    - target: {fileID: 3698226371082819697, guid: 52d44afadec5f574b974d869f2af15f5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3698226371082819697, guid: 52d44afadec5f574b974d869f2af15f5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3698226371082819697, guid: 52d44afadec5f574b974d869f2af15f5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3698226371082819697, guid: 52d44afadec5f574b974d869f2af15f5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3698226371082819697, guid: 52d44afadec5f574b974d869f2af15f5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3698226371082819697, guid: 52d44afadec5f574b974d869f2af15f5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3698226371082819697, guid: 52d44afadec5f574b974d869f2af15f5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3698226371082819697, guid: 52d44afadec5f574b974d869f2af15f5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3698226371082819697, guid: 52d44afadec5f574b974d869f2af15f5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3698226371082819698, guid: 52d44afadec5f574b974d869f2af15f5,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 51ada2bb4c4fdf64686b9a38ddef233f,
+        type: 2}
+    - target: {fileID: 3698226371082819699, guid: 52d44afadec5f574b974d869f2af15f5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: db9891d0637396341a17b21a1d07b893, type: 2}
+    - target: {fileID: 4753177128475592418, guid: 52d44afadec5f574b974d869f2af15f5,
+        type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 11400000, guid: 927624c9f9c998f43bfb920bd541ef5d,
+        type: 2}
+    - target: {fileID: 7053661139330904232, guid: 52d44afadec5f574b974d869f2af15f5,
+        type: 3}
+      propertyPath: m_Mass
+      value: 100
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 52d44afadec5f574b974d869f2af15f5, type: 3}
+--- !u!1 &9124660585959402385 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3698226371082819661, guid: 52d44afadec5f574b974d869f2af15f5,
+    type: 3}
+  m_PrefabInstance: {fileID: 5617100612190712796}
+  m_PrefabAsset: {fileID: 0}

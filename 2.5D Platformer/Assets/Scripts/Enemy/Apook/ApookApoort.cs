@@ -38,6 +38,8 @@ public class ApookApoort : MonoBehaviour
     {
         enemyController = GetComponent<EnemyController>();
         meshRenderer = GetComponent<MeshRenderer>();
+
+        enemyController.pauseMovement = true;
     }
 
     void Update()
@@ -100,6 +102,7 @@ public class ApookApoort : MonoBehaviour
 
     public void Reset()
     {
+        enemyController.pauseMovement = true;
         hasBeenStomped = false;
         hasBeenKicked = false;
         shellTimer = 0;

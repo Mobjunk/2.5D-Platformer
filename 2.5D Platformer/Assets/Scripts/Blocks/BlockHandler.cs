@@ -4,11 +4,23 @@ using UnityEngine;
 
 public abstract class BlockHandler : MonoBehaviour
 {
+    /// <summary>
+    /// Reference to the game manager
+    /// </summary>
     public GameManager gameManager => GameManager.instance;
+    /// <summary>
+    /// Reference to the sound player
+    /// </summary>
     public SoundPlayer soundPlayer => SoundPlayer.instance;
-
+    /// <summary>
+    /// The reward attachted to this block
+    /// </summary>
     public Reward reward;
 
+    /// <summary>
+    /// The player colliding with the brick
+    /// </summary>
+    /// <param name="collision">The object colliding with this</param>
     void OnCollisionEnter(Collision collision)
     {
         //Checks if there was collision with the player
@@ -43,22 +55,38 @@ public abstract class BlockHandler : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// The IEnumerator for the brick going upwards and back down
+    /// </summary>
+    /// <returns></returns>
     public IEnumerator BrickGoingUp()
     {
+        //The transform of the game object
         Transform transform = gameObject.transform;
+        //The old position of the game object
         Vector3 oldPosition = transform.position;
+        //Handles the brick going upwards
         transform.position = new Vector3(transform.position.x, transform.position.y + 0.2f, transform.position.z);
+        //Adds a delay
         yield return new WaitForSeconds(0.2f);
+        //Sets the brick back to the old position
         transform.position = oldPosition;
     }
 
-    public void HandleMovement()
+    /// <summary>
+    /// Handles the brick going upwards
+    /// </summary>
+    protected void HandleMovement()
     {
         StartCoroutine(BrickGoingUp());
     }
 
     public abstract void HandleCollision();
 
+    /// <summary>
+    /// Check if the brick is interactable
+    /// </summary>
+    /// <returns>If the brick is interactable</returns>
     public abstract bool CanInteract();
 
 }

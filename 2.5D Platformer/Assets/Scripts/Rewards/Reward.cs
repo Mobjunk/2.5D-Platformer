@@ -7,6 +7,5 @@ public class Reward : ScriptableObject
 {
     public GameObject prefab;
     public bool powerup;
-    public bool coin;
     public Sounds sound;
 }

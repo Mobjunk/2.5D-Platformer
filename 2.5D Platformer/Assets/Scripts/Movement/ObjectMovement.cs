@@ -24,7 +24,6 @@ public abstract class ObjectMovement : MonoBehaviour
     /// <summary>
     /// Checks if the movement has to been paused
     /// </summary>
-    [HideInInspector]
     public bool pauseMovement;
 
     public virtual void Start()
