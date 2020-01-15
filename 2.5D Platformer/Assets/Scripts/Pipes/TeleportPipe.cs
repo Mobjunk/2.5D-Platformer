@@ -59,7 +59,7 @@ public class TeleportPipe : MonoBehaviour
     
     private void HandlePipe()
     {
-        if (Input.GetKeyDown(KeyCode.D) && canUseThePipe && !usingThePipe)
+        if (Input.GetKeyDown(KeyCode.D) && canUseThePipe && !usingThePipe && GameManager.instance.playerObject.transform.position.y < 0)
         {
             usingThePipe = true;
             SoundPlayer.instance.PlaySound(Sounds.PIPE_TRAVEL);

@@ -23,6 +23,10 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private PlayerInvincibility playerInvincibility => PlayerInvincibility.instance;
     /// <summary>
+    /// Reference to the sound player
+    /// </summary>
+    private SoundPlayer soundPlayer => SoundPlayer.instance;
+    /// <summary>
     /// The game object for the player
     /// </summary>
     [SerializeField] public GameObject playerObject;
@@ -33,11 +37,11 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// Checks if the game has been started
     /// </summary>
-    [HideInInspector] public bool gameStarted = false;
+    [HideInInspector] public bool gameStarted = false, levelEnding = false, levelFinished;
     /// <summary>
     /// The time of the map
     /// </summary>
-    private float mapTimer = 400f;
+    [HideInInspector] public float mapTimer = 400f;
     /// <summary>
     /// The current score of the player and how many coins he has collected
     /// </summary>
@@ -75,21 +79,27 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         if (!gameStarted) return;
-        
-        UpdateTime();
-        if (mapTimer < 100 && !playedWarning)
+
+        if (!levelEnding)
         {
-            SoundPlayer.instance.PlaySound(Sounds.TIME_WARNING);
-            playedWarning = true;
+            UpdateTime(Time.deltaTime);
+            if (mapTimer < 100 && !playedWarning)
+            {
+                soundPlayer.PlaySound(Sounds.TIME_WARNING);
+                playedWarning = true;
+            }   
         }
     }
 
     /// <summary>
     /// Handles updating the time and the UI
     /// </summary>
-    void UpdateTime()
+    public void UpdateTime(float time)
     {
-        mapTimer -= Time.deltaTime;
+        if (levelFinished) return;
+        
+        mapTimer -= time;
+        if (mapTimer < 0) mapTimer = 0;
         timeText.text = $"Time\n{Math.Floor(mapTimer)}";
     }
 
@@ -136,6 +146,8 @@ public class GameManager : MonoBehaviour
             playerInvincibility.StartInvincibility();
             return;
         }
+
+        soundPlayer.PlaySound(Sounds.PLAYER_DIES);
         //Sets the time text
         timeText.text = "Time";
         //Reset the map time
@@ -151,7 +163,6 @@ public class GameManager : MonoBehaviour
             informationPanel.GameOver();
         else
             informationPanel.DisplayPanel();
-
     }
 
     /// <summary>
@@ -159,7 +170,6 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void RespawnEnemies()
     {
-        print($"CALLEDDD {spawnedEnemies.Length}");
         //Loops though all the enemies
         for (int index = 0; index < spawnedEnemies.Length; index++)
         {

@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float movementSpeed = 10f;
+    [HideInInspector] public bool disableMovement = false;
 
     private Rigidbody rigidbody;
 
@@ -16,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (!GameManager.instance.gameStarted) return;
+        if (!GameManager.instance.gameStarted || disableMovement) return;
         Move();
     }
 

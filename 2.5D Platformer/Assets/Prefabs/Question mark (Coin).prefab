@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 599298728445735331}
   - component: {fileID: 599298728445735330}
   - component: {fileID: 599298728445735341}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Question mark (Coin)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 599298729026519880}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Spawn point
   m_TagString: Untagged
   m_Icon: {fileID: 0}

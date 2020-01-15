@@ -7,8 +7,8 @@
       <e p="2.5D Platformer.sln" t="IncludeFlat" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="ActivateEnemy.cs" t="Include" />
         <e p="Scripts" t="Include">
+          <e p="ActivateEnemy.cs" t="Include" />
           <e p="Blocks" t="Include">
             <e p="BlockHandler.cs" t="Include" />
             <e p="Impl" t="Include">
@@ -31,8 +31,10 @@
             <e p="Enemy.cs" t="Include" />
             <e p="EnemyController.cs" t="Include" />
           </e>
+          <e p="FlagPole.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="InformationPanel.cs" t="Include" />
+          <e p="InvisibleDeath.cs" t="Include" />
           <e p="LeaveCamera.cs" t="Include" />
           <e p="Movement" t="Include">
             <e p="ObjectMovement.cs" t="Include" />
