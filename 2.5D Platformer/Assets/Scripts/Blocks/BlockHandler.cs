@@ -34,9 +34,10 @@ public abstract class BlockHandler : MonoBehaviour
 
                 //Grabs the first contact point
                 ContactPoint contact = collision.contacts[0];
+                // && rigidbody.velocity.y >= 0
                 //print($"rigidbody.velocity.y: {rigidbody.velocity.y}");
                 //Checks if the connection point was from the bottom
-                if (Vector3.Dot(contact.normal, Vector3.up) > 0.5 && rigidbody.velocity.y >= 0)
+                if (Vector3.Dot(contact.normal, Vector3.up) > 0.5)
                 {
                     //Checks if the player can interact bricks
                     if (CanInteract())

@@ -35,4 +35,9 @@ public class SoundPlayer : MonoBehaviour
         audioSource.clip = clip;
         audioSource.Play();
     }
+
+    public bool IsPlaying()
+    {
+        return audioSource.isPlaying;
+    }
 }

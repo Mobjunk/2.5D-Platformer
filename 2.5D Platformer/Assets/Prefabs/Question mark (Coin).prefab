@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 599298728445735341}
   m_Layer: 8
   m_Name: Question mark (Coin)
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

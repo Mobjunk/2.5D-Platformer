@@ -16,7 +16,7 @@ public class InformationPanel : MonoBehaviour
     /// <summary>
     /// All the game objects for all the panel options
     /// </summary>
-    [SerializeField] private GameObject infoPanel, playerSprite, playerLivesObject, worldObject, gameOverObject;
+    [SerializeField] private GameObject infoPanel, playerSprite, playerLivesObject, worldObject, gameOverObject, thanksObject;
     /// <summary>
     /// All the Text components for the lives, world and game over
     /// </summary>
@@ -36,6 +36,7 @@ public class InformationPanel : MonoBehaviour
 
     void Update()
     {
+        if (!BasicCutscene.instance.finishedCutscene) return;
         if (displayTimer > 0)
         {
             displayTimer -= Time.deltaTime;
@@ -73,5 +74,16 @@ public class InformationPanel : MonoBehaviour
         playerLivesObject.SetActive(false);
         worldObject.SetActive(false);
         gameOverObject.SetActive(true);
+        
+        SoundPlayer.instance.PlaySound(Sounds.GAME_OVER);
+    }
+
+    public void ThanksForPlaying()
+    {
+        infoPanel.SetActive(true);
+        playerSprite.SetActive(false);
+        playerLivesObject.SetActive(false);
+        worldObject.SetActive(false);
+        thanksObject.SetActive(true);
     }
 }

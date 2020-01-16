@@ -8,6 +8,8 @@ public class EnemyController : ObjectMovement
     /// Reference to the game manager script
     /// </summary>
     GameManager gameManager => GameManager.instance;
+    
+    SoundPlayer soundPlayer => SoundPlayer.instance;
 
     /// <summary>
     /// The scriptable object attached to this enemy
@@ -48,6 +50,8 @@ public class EnemyController : ObjectMovement
     {
         stompedHead = false;
         kickedEnemy = false;
+        pauseMovement = defaultMovement;
+        direction = -1;
     }
     
     void OnCollisionEnter(Collision collision)
@@ -63,6 +67,7 @@ public class EnemyController : ObjectMovement
                     PlayerJumping jump = collision.gameObject.GetComponent<PlayerJumping>();
                     //Makes the player jump up
                     jump.Jump(5f);
+                    soundPlayer.PlaySound(Sounds.KICKING);
                     if (!stompedHead)
                     {
                         stompedHead = true;
@@ -81,11 +86,12 @@ public class EnemyController : ObjectMovement
                     //Grabs the new direction of the enemy
                     direction = (int) Input.GetAxisRaw("Horizontal");
                     kickedEnemy = true;
+                    soundPlayer.PlaySound(Sounds.KICKING);
                 }
                 else gameManager.HandleDeath();
             }
         }
-        else if (!collision.gameObject.tag.Equals("NoCollision") || collision.gameObject.tag.Equals("Interactable"))
+        else if (collision.gameObject.tag.Equals("Floor") || collision.gameObject.tag.Equals("Interactable"))
         {
             //Switch direction
             direction = direction == 1 ? -1 : 1;

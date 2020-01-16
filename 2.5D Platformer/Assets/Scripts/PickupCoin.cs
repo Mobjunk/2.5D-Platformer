@@ -21,6 +21,8 @@ public class PickupCoin : MonoBehaviour
             gameManager.IncreaseCoins(1);
             //Increase score
             gameManager.IncreaseScore(100);
+            
+            SoundPlayer.instance.PlaySound(Sounds.PICKUP_COIN);
         }
     }
 }

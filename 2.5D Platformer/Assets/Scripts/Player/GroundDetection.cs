@@ -10,18 +10,20 @@ public class GroundDetection : MonoBehaviour
     /// The boolean to check if the player is on the ground
     /// </summary>
     [HideInInspector] public bool isGrounded;
-    [SerializeField] float distanceToFloor = 0.5f;
+    [SerializeField] float distanceToFloor = 0.5f, distToGround;
+    private BoxCollider collider;
 
     void Start()
     {
+        collider = GetComponent<BoxCollider>();
         instance = this;
+        distToGround = collider.bounds.extents.y;
     }
 
     void Update()
     {
-        //print(Physics.Raycast(transform.position, Vector3.down, distanceToFloor));
-
         //Checks if the player is grounded or not
-        isGrounded = Physics.OverlapBox(gameObject.transform.position, transform.localScale / 2, Quaternion.identity, 1 << LayerMask.NameToLayer("Solid")).Length > 0;
+        isGrounded = Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.1f);
     }
+
 }

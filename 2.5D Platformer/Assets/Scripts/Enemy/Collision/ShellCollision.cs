@@ -25,9 +25,9 @@ public class ShellCollision : MonoBehaviour
         if (other.gameObject.tag.Equals("Enemy") && enemyController.stompedHead)
         {
             //Increase the score
-            gameManager.IncreaseScore(enemyController.enemy.score);
+            gameManager.IncreaseScore(other.GetComponent<EnemyController>().enemy.score);
             //Remove the enemy
-            Destroy(other.gameObject);
+            other.gameObject.SetActive(false);
         }
     }
 }

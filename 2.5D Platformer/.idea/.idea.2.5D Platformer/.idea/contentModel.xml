@@ -9,6 +9,7 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="ActivateEnemy.cs" t="Include" />
+          <e p="BasicCutscene.cs" t="Include" />
           <e p="Blocks" t="Include">
             <e p="BlockHandler.cs" t="Include" />
             <e p="Impl" t="Include">

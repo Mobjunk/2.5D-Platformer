@@ -16,4 +16,16 @@ public class InvisibleDeath : MonoBehaviour
             other.gameObject.SetActive(false);
         }
     }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag.Equals("Player"))
+        {
+            GameManager.instance.HandleDeath();
+        }
+        else if (other.tag.Equals("Enemy"))
+        {
+            other.gameObject.SetActive(false);
+        }
+    }
 }

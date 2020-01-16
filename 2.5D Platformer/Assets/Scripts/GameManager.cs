@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -78,6 +79,9 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Escape))
+            Application.Quit();
+        
         if (!gameStarted) return;
 
         if (!levelEnding)
@@ -123,6 +127,11 @@ public class GameManager : MonoBehaviour
         coinText.text = $"X {currentCoins}";
     }
 
+    public void Restart()
+    {
+        SceneManager.LoadScene(0);
+    }
+
     /// <summary>
     /// Handles the death of the player
     /// </summary>
@@ -159,8 +168,11 @@ public class GameManager : MonoBehaviour
         //Decrease the lives of the player
         playerInformation.DecreaseLives();
         //Checks if the player has no lives left
-        if(playerInformation.playerLives <= 0)
+        if (playerInformation.playerLives <= 0)
+        {
+            playerObject.SetActive(false);
             informationPanel.GameOver();
+        }
         else
             informationPanel.DisplayPanel();
     }

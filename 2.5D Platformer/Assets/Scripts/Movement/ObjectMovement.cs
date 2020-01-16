@@ -18,17 +18,18 @@ public abstract class ObjectMovement : MonoBehaviour
     /// <summary>
     /// The direction the 'object' is moving in
     /// </summary>
-    [HideInInspector]
+    //[HideInInspector]
     public int direction = -1;
 
     /// <summary>
     /// Checks if the movement has to been paused
     /// </summary>
-    public bool pauseMovement;
+    public bool pauseMovement, defaultMovement;
 
     public virtual void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
+        defaultMovement = pauseMovement;
     }
 
     public virtual void Update()

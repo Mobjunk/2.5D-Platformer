@@ -10,7 +10,7 @@ public class FlagPole : MonoBehaviour
     SoundPlayer soundPlayer => SoundPlayer.instance;
     
     [SerializeField] private Transform flag, flagEndPosition, playerEndPosition;
-    public bool startEndScene = false, flagReachedEndpoint = false, finishedCounting = false, playingStageSound = false, walkedIntoTheCastle = false;
+    [HideInInspector] public bool startEndScene = false, flagReachedEndpoint = false, finishedCounting = false, playingStageSound = false, walkedIntoTheCastle = false, fireworksFinished = false;
     private GameObject player;
     
     // Update is called once per frame
@@ -41,10 +41,16 @@ public class FlagPole : MonoBehaviour
             }
             Rigidbody rigidbody = player.GetComponent<Rigidbody>();
             rigidbody.velocity = new Vector2(2f, rigidbody.velocity.y);
-        } else if (finishedCounting && player.transform.position.x >= playerEndPosition.position.x)
+        } else if (finishedCounting && !walkedIntoTheCastle && player.transform.position.x >= playerEndPosition.position.x)
         {
+            soundPlayer.PlaySound(Sounds.FIREWORKS);
             walkedIntoTheCastle = true;
             player.SetActive(false);
+        }
+        if (walkedIntoTheCastle && !soundPlayer.IsPlaying() && !fireworksFinished)
+        {
+            InformationPanel.instance.ThanksForPlaying();
+            fireworksFinished = true;
         }
     }
 

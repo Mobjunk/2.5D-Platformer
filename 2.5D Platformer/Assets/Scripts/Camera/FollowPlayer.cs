@@ -8,7 +8,8 @@ public class FollowPlayer : MonoBehaviour
 
     void Update()
     {
-        //Makes the camera follow the player
-        transform.position = new Vector3(target.position.x, target.position.y + 2, transform.position.z);
+        if(BasicCutscene.instance.finishedCutscene)
+            //Makes the camera follow the player
+            transform.position = new Vector3(target.position.x, target.position.y + 2, transform.position.z);
     }
 }
